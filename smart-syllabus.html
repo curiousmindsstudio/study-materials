@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Smart NEET Syllabus</title>
+<title>Smart NEET Syllabus PRO</title>
 
 <style>
 :root{
@@ -33,7 +33,7 @@ nav{
 /* HERO */
 .hero{
     text-align:center;
-    padding:3rem 1rem;
+    padding:2rem;
 }
 
 /* CONTAINER */
@@ -51,114 +51,120 @@ nav{
     margin-bottom:2rem;
 }
 
+/* CHECKBOX */
+label{
+    display:block;
+    margin:8px 0;
+    cursor:pointer;
+}
+
+/* PROGRESS BAR */
+.progress{
+    height:20px;
+    background:#333;
+    border-radius:10px;
+    overflow:hidden;
+}
+.bar{
+    height:100%;
+    background:#22c55e;
+    width:0%;
+}
+
+/* TIMER */
+.timer{
+    text-align:center;
+    font-size:2rem;
+    margin:1rem 0;
+}
+button{
+    padding:10px 15px;
+    margin:5px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
 /* TAGS */
-.high{color:#22c55e;font-weight:bold;}
+.high{color:#22c55e;}
 .medium{color:#facc15;}
 .low{color:#ef4444;}
-
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:2rem;
-    background:#111;
-}
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
-    <b>🧠 Smart Syllabus</b>
-    <span onclick="toggleMode()" id="icon" style="cursor:pointer;">🌕</span>
+<b>🧠 Smart Syllabus PRO</b>
+<span onclick="toggleMode()" id="icon">🌕</span>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-    <h1>NEET Smart Syllabus 2026</h1>
-    <p>Based on latest NTA syllabus | Focus on high-yield topics</p>
+<h1>NEET Smart Syllabus + Tracker</h1>
+<p>Track progress + Focus on high yield topics</p>
 </section>
 
 <div class="container">
 
-<!-- BIOLOGY -->
+<!-- TIMER -->
 <div class="card">
-<h2>🌿 Biology (360 Marks)</h2>
+<h2>⏱ Study Timer</h2>
+<div class="timer" id="time">00:00</div>
 
-<ul>
-<li class="high">Human Physiology ⭐⭐⭐⭐</li>
-<li class="high">Genetics & Evolution ⭐⭐⭐⭐</li>
-<li class="high">Ecology ⭐⭐⭐⭐</li>
-<li class="medium">Plant Physiology ⭐⭐⭐</li>
-<li class="medium">Cell Biology ⭐⭐⭐</li>
-<li class="medium">Reproduction ⭐⭐⭐</li>
-<li class="low">Biotechnology ⭐⭐</li>
-<li class="low">Diversity in Living World ⭐⭐</li>
-</ul>
+<button onclick="startTimer()">Start</button>
+<button onclick="pauseTimer()">Pause</button>
+<button onclick="resetTimer()">Reset</button>
 </div>
 
-<!-- CHEMISTRY -->
+<!-- PROGRESS -->
 <div class="card">
-<h2>⚗️ Chemistry (180 Marks)</h2>
+<h2>📊 Progress Tracker</h2>
+<div class="progress">
+<div class="bar" id="bar"></div>
+</div>
+<p id="percent">0% Completed</p>
+</div>
 
-<h3>Physical Chemistry</h3>
-<ul>
-<li class="high">Mole Concept ⭐⭐⭐⭐</li>
-<li class="high">Thermodynamics ⭐⭐⭐⭐</li>
-<li class="medium">Electrochemistry ⭐⭐⭐</li>
-<li class="medium">Chemical Equilibrium ⭐⭐⭐</li>
-</ul>
+<!-- BIO -->
+<div class="card">
+<h2>🌿 Biology</h2>
 
-<h3>Organic Chemistry</h3>
-<ul>
-<li class="high">GOC + Mechanism ⭐⭐⭐⭐</li>
-<li class="high">Carbonyl Compounds ⭐⭐⭐⭐</li>
-<li class="medium">Hydrocarbons ⭐⭐⭐</li>
-<li class="medium">Amines ⭐⭐⭐</li>
-</ul>
+<label><input type="checkbox" class="chk"> Human Physiology <span class="high">⭐⭐⭐⭐</span></label>
+<label><input type="checkbox" class="chk"> Genetics <span class="high">⭐⭐⭐⭐</span></label>
+<label><input type="checkbox" class="chk"> Ecology <span class="high">⭐⭐⭐⭐</span></label>
+<label><input type="checkbox" class="chk"> Plant Physiology <span class="medium">⭐⭐⭐</span></label>
 
-<h3>Inorganic Chemistry</h3>
-<ul>
-<li class="high">Chemical Bonding ⭐⭐⭐⭐</li>
-<li class="high">Coordination Compounds ⭐⭐⭐⭐</li>
-<li class="medium">Periodic Table ⭐⭐⭐</li>
-<li class="low">s-block & Hydrogen ⭐⭐</li>
-</ul>
+</div>
+
+<!-- CHEM -->
+<div class="card">
+<h2>⚗️ Chemistry</h2>
+
+<label><input type="checkbox" class="chk"> Mole Concept <span class="high">⭐⭐⭐⭐</span></label>
+<label><input type="checkbox" class="chk"> Thermodynamics <span class="high">⭐⭐⭐⭐</span></label>
+<label><input type="checkbox" class="chk"> GOC <span class="high">⭐⭐⭐⭐</span></label>
+<label><input type="checkbox" class="chk"> Chemical Bonding <span class="high">⭐⭐⭐⭐</span></label>
 
 </div>
 
 <!-- PHYSICS -->
 <div class="card">
-<h2>⚡ Physics (180 Marks)</h2>
+<h2>⚡ Physics</h2>
 
-<ul>
-<li class="high">Laws of Motion ⭐⭐⭐⭐</li>
-<li class="high">Thermodynamics ⭐⭐⭐⭐</li>
-<li class="high">Current Electricity ⭐⭐⭐⭐</li>
-<li class="high">Magnetism ⭐⭐⭐⭐</li>
-
-<li class="medium">Work, Energy & Power ⭐⭐⭐</li>
-<li class="medium">Optics ⭐⭐⭐</li>
-<li class="medium">Modern Physics ⭐⭐⭐</li>
-
-<li class="low">Units & Measurement ⭐⭐</li>
-<li class="low">Waves ⭐⭐</li>
-</ul>
+<label><input type="checkbox" class="chk"> Laws of Motion <span class="high">⭐⭐⭐⭐</span></label>
+<label><input type="checkbox" class="chk"> Current Electricity <span class="high">⭐⭐⭐⭐</span></label>
+<label><input type="checkbox" class="chk"> Thermodynamics <span class="high">⭐⭐⭐⭐</span></label>
+<label><input type="checkbox" class="chk"> Magnetism <span class="high">⭐⭐⭐⭐</span></label>
 
 </div>
 
 </div>
-
-<!-- FOOTER -->
-<footer>
-<p>Made with ❤️ by Curious Minds</p>
-</footer>
 
 <script>
+/* DARK MODE */
 function toggleMode(){
     document.body.classList.toggle("light");
-
-    let icon = document.getElementById("icon");
+    let icon=document.getElementById("icon");
 
     if(document.body.classList.contains("light")){
         icon.textContent="🌞";
@@ -168,12 +174,59 @@ function toggleMode(){
         localStorage.setItem("mode","dark");
     }
 }
-
 if(localStorage.getItem("mode")==="light"){
     document.body.classList.add("light");
-    document.getElementById("icon").textContent="🌞";
+}
+
+/* PROGRESS */
+let checkboxes=document.querySelectorAll(".chk");
+
+checkboxes.forEach((box,i)=>{
+    box.checked=localStorage.getItem("chk"+i)==="true";
+
+    box.addEventListener("change",()=>{
+        localStorage.setItem("chk"+i,box.checked);
+        updateProgress();
+    });
+});
+
+function updateProgress(){
+    let total=checkboxes.length;
+    let done=0;
+
+    checkboxes.forEach(b=>{if(b.checked) done++;});
+
+    let percent=(done/total)*100;
+    document.getElementById("bar").style.width=percent+"%";
+    document.getElementById("percent").innerText=Math.round(percent)+"% Completed";
+}
+
+updateProgress();
+
+/* TIMER */
+let seconds=0;
+let timer;
+
+function startTimer(){
+    timer=setInterval(()=>{
+        seconds++;
+        let m=Math.floor(seconds/60);
+        let s=seconds%60;
+        document.getElementById("time").innerText=
+        (m<10?"0":"")+m+":"+(s<10?"0":"")+s;
+    },1000);
+}
+
+function pauseTimer(){
+    clearInterval(timer);
+}
+
+function resetTimer(){
+    clearInterval(timer);
+    seconds=0;
+    document.getElementById("time").innerText="00:00";
 }
 </script>
 
 </body>
-  </html>
+    </html>
