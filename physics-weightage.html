@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NEET Physics Chapterwise Weightage</title>
+
+<meta name="description" content="NEET Physics chapterwise weightage with important topics and question distribution.">
+
+<style>
+:root {
+    --bg: #0f172a;
+    --text: white;
+    --card: rgba(255,255,255,0.06);
+}
+
+.light {
+    --bg: #f1f5ff;
+    --text: #111;
+    --card: rgba(0,0,0,0.05);
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* NAV */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 2rem;
+}
+
+/* CARD */
+.card {
+    background: var(--card);
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
+    padding: 1.5rem;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #6366f1;
+}
+
+tr:nth-child(even) {
+    background: rgba(255,255,255,0.05);
+}
+
+/* HIGHLIGHT */
+.high {
+    color: #22c55e;
+    font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #111;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <b>⚡ Physics Weightage</b>
+    <span onclick="toggleMode()" style="cursor:pointer;" id="icon">🌕</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>NEET Physics Chapterwise Weightage</h1>
+    <p>
+        Physics requires strong concepts + numerical practice. Focus more on high-weight chapters for better scoring.
+    </p>
+</section>
+
+<div class="container">
+
+<div class="card">
+
+<table>
+<tr>
+<th>Chapter</th>
+<th>Questions</th>
+<th>Weightage</th>
+</tr>
+
+<tr><td>Centre of Mass</td><td>1</td><td>1%</td></tr>
+<tr><td>Gravitation</td><td>2</td><td>3%</td></tr>
+<tr><td>Kinematics</td><td>1</td><td>2%</td></tr>
+
+<tr><td class="high">Laws of Motion</td><td>3</td><td>7%</td></tr>
+<tr><td>Mechanical Properties</td><td>2</td><td>3%</td></tr>
+
+<tr><td>Oscillations</td><td>1</td><td>3%</td></tr>
+<tr><td>Rotational Motion</td><td>1</td><td>1%</td></tr>
+
+<tr><td class="high">Rigid Body & System</td><td>3</td><td>7%</td></tr>
+
+<tr><td>Units & Measurement</td><td>1</td><td>2%</td></tr>
+<tr><td>Waves</td><td>2</td><td>4%</td></tr>
+
+<tr><td>Work, Energy & Power</td><td>2</td><td>4%</td></tr>
+
+<tr><td>Kinetic Theory</td><td>1</td><td>2%</td></tr>
+<tr><td>Bulk Matter</td><td>1</td><td>3%</td></tr>
+<tr><td>Thermal Properties</td><td>1</td><td>2%</td></tr>
+
+<tr><td class="high">Thermodynamics</td><td>3</td><td>7%</td></tr>
+
+<tr><td class="high">Magnetism</td><td>3</td><td>6%</td></tr>
+
+<tr><td>Electric Charges</td><td>1</td><td>2%</td></tr>
+<tr><td>EM Waves</td><td>1</td><td>1%</td></tr>
+
+<tr><td>Capacitance</td><td>1</td><td>2%</td></tr>
+<tr><td>Electrostatics</td><td>1</td><td>3%</td></tr>
+
+<tr><td>Alternating Current</td><td>1</td><td>3%</td></tr>
+
+<tr><td class="high">Current Electricity</td><td>3</td><td>6%</td></tr>
+
+<tr><td>EM Induction</td><td>1</td><td>2%</td></tr>
+
+<tr><td class="high">Semiconductors</td><td>3</td><td>6%</td></tr>
+
+<tr><td>Atoms & Nuclei</td><td>2</td><td>5%</td></tr>
+
+<tr><td>Dual Nature</td><td>2</td><td>4%</td></tr>
+
+<tr><td class="high">Ray Optics</td><td>3</td><td>5%</td></tr>
+
+<tr><td>Wave Optics</td><td>2</td><td>4%</td></tr>
+
+</table>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Curious Minds Studio</p>
+</footer>
+
+<script>
+function toggleMode(){
+    document.body.classList.toggle("light");
+
+    let icon = document.getElementById("icon");
+
+    if(document.body.classList.contains("light")){
+        icon.textContent = "🌞";
+        localStorage.setItem("mode","light");
+    } else {
+        icon.textContent = "🌕";
+        localStorage.setItem("mode","dark");
+    }
+}
+
+if(localStorage.getItem("mode") === "light"){
+    document.body.classList.add("light");
+    document.getElementById("icon").textContent = "🌞";
+}
+</script>
+
+</body>
+  </html>
