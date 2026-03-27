@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NEET Biology Chapterwise Weightage</title>
+
+<meta name="description" content="NEET Biology chapterwise weightage with Botany and Zoology distribution.">
+
+<style>
+:root {
+    --bg: #0f172a;
+    --text: white;
+    --card: rgba(255,255,255,0.06);
+}
+
+.light {
+    --bg: #f1f5ff;
+    --text: #111;
+    --card: rgba(0,0,0,0.05);
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* NAV */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem;
+}
+
+/* CARD */
+.card {
+    background: var(--card);
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #6366f1;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: rgba(255,255,255,0.05);
+}
+
+/* HIGHLIGHT */
+.high {
+    color: #22c55e;
+    font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #111;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <b>🧬 Biology Weightage</b>
+    <span onclick="toggleMode()" style="cursor:pointer;" id="icon">🌕</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>NEET Biology Chapterwise Weightage</h1>
+    <p>
+        Biology carries <b>360 marks (50% of NEET)</b> with 90 questions.
+        Focus on high-weightage chapters for maximum score.
+    </p>
+</section>
+
+<div class="container">
+
+    <!-- BOTANY -->
+    <div class="card">
+        <h2>🌿 Botany</h2>
+
+        <table>
+            <tr>
+                <th>Chapter</th>
+                <th>Questions</th>
+                <th>Weightage</th>
+            </tr>
+
+            <tr><td class="high">Genetics & Evolution</td><td>15</td><td>25%</td></tr>
+            <tr><td class="high">Ecology & Environment</td><td>10</td><td>16%</td></tr>
+            <tr><td>Plant Physiology</td><td>8</td><td>14%</td></tr>
+            <tr><td>Plant Diversity</td><td>7</td><td>12%</td></tr>
+            <tr><td>Cell Structure & Function</td><td>6</td><td>10%</td></tr>
+            <tr><td>Plant Reproduction</td><td>5</td><td>9%</td></tr>
+            <tr><td>Morphology</td><td>4</td><td>7%</td></tr>
+            <tr><td>Plant Anatomy</td><td>2</td><td>4%</td></tr>
+            <tr><td>Biomolecules</td><td>2</td><td>3%</td></tr>
+
+        </table>
+    </div>
+
+    <!-- ZOOLOGY -->
+    <div class="card">
+        <h2>🧠 Zoology</h2>
+
+        <table>
+            <tr>
+                <th>Chapter</th>
+                <th>Questions</th>
+                <th>Weightage</th>
+            </tr>
+
+            <tr><td class="high">Human Physiology</td><td>13</td><td>45%</td></tr>
+            <tr><td class="high">Reproduction</td><td>5</td><td>16%</td></tr>
+            <tr><td>Animal Kingdom</td><td>3</td><td>10%</td></tr>
+            <tr><td>Origin & Evolution</td><td>3</td><td>10%</td></tr>
+            <tr><td>Human Health & Diseases</td><td>3</td><td>9%</td></tr>
+            <tr><td>Structural Organization</td><td>2</td><td>5%</td></tr>
+            <tr><td>Animal Husbandry</td><td>1</td><td>3%</td></tr>
+            <tr><td>Biology in Human Welfare</td><td>1</td><td>2%</td></tr>
+
+        </table>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Curious Minds Studio</p>
+</footer>
+
+<script>
+function toggleMode(){
+    document.body.classList.toggle("light");
+
+    let icon = document.getElementById("icon");
+
+    if(document.body.classList.contains("light")){
+        icon.textContent = "🌞";
+        localStorage.setItem("mode","light");
+    } else {
+        icon.textContent = "🌕";
+        localStorage.setItem("mode","dark");
+    }
+}
+
+if(localStorage.getItem("mode") === "light"){
+    document.body.classList.add("light");
+    document.getElementById("icon").textContent = "🌞";
+}
+</script>
+
+</body>
+  </html>
