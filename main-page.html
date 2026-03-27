@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Study Materials Hub | Curious Minds</title>
+
+<meta name="description" content="Study materials for NEET, school classes, and international exams.">
+
+<style>
+:root {
+    --bg: #0f172a;
+    --text: white;
+    --card: rgba(255,255,255,0.06);
+}
+
+.light {
+    --bg: #f1f5ff;
+    --text: #111;
+    --card: rgba(0,0,0,0.05);
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+nav a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: var(--text);
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+}
+
+.hero p {
+    max-width: 600px;
+    margin: auto;
+    color: gray;
+}
+
+/* GRID */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+/* CARD */
+.card {
+    background: var(--card);
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.4s;
+    cursor: pointer;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+}
+
+.card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.card h3 {
+    padding: 1rem;
+}
+
+/* LOCK */
+.locked::after {
+    content: "🔒 Coming Soon";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: crimson;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 16px;
+    background: #6366f1;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #111;
+}
+
+/* ANIMATION */
+.fade {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <b>📚 Study Hub</b>
+    <div>
+        <span onclick="toggleMode()" style="cursor:pointer;" id="icon">🌕</span>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero fade">
+    <h1>All Study Materials in One Place</h1>
+    <p>
+        Access resources for NEET, school (Class 1–12), and international exams like SAT, MCAT, and more.
+    </p>
+</section>
+
+<!-- MAIN GRID -->
+<div class="container">
+
+    <h2>🔥 Popular Exams</h2>
+    <div class="grid">
+
+        <!-- NEET -->
+        <a href="neet.html">
+            <div class="card fade">
+                <img src="neet.jpeg">
+                <h3>🧠 NEET</h3>
+            </div>
+        </a>
+
+        <!-- INTERNATIONAL -->
+        <div class="card locked fade">
+            <img src="sat.jpeg">
+            <h3>🌍 SAT</h3>
+        </div>
+
+        <div class="card locked fade">
+            <img src="mcat.jpeg">
+            <h3>🧬 MCAT</h3>
+        </div>
+
+    </div>
+
+    <h2>📖 School Classes</h2>
+    <div class="grid">
+
+        <!-- CLASS 1–12 -->
+        <script>
+        for(let i=1;i<=12;i++){
+            document.write(`
+                <div class="card locked fade">
+                    <img src="class${i}.jpeg">
+                    <h3>Class ${i}</h3>
+                </div>
+            `)
+        }
+        </script>
+
+    </div>
+
+</div>
+
+<!-- CONTACT -->
+<div class="container fade">
+    <h2>📧 Contact</h2>
+    <p>Email: curiousminds.work@gmail.com</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Curious Minds Studio</p>
+    <p>Made with ❤️ for students</p>
+</footer>
+
+<script>
+/* DARK MODE */
+function toggleMode(){
+    document.body.classList.toggle("light");
+
+    let icon = document.getElementById("icon");
+
+    if(document.body.classList.contains("light")){
+        icon.textContent = "🌞";
+        localStorage.setItem("mode","light");
+    } else {
+        icon.textContent = "🌕";
+        localStorage.setItem("mode","dark");
+    }
+}
+
+if(localStorage.getItem("mode") === "light"){
+    document.body.classList.add("light");
+    document.getElementById("icon").textContent = "🌞";
+}
+
+/* SCROLL ANIMATION */
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+document.querySelectorAll(".fade").forEach(el => observer.observe(el));
+</script>
+
+</body>
+  </html>
