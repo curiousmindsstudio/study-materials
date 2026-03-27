@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Smart NEET Syllabus</title>
+
+<style>
+:root{
+    --bg:#0f172a;
+    --text:white;
+    --card:rgba(255,255,255,0.05);
+}
+.light{
+    --bg:#f1f5ff;
+    --text:#111;
+}
+body{
+    margin:0;
+    font-family:sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* NAV */
+nav{
+    display:flex;
+    justify-content:space-between;
+    padding:1rem 2rem;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:3rem 1rem;
+}
+
+/* CONTAINER */
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:2rem;
+}
+
+/* CARD */
+.card{
+    background:var(--card);
+    padding:1.5rem;
+    border-radius:15px;
+    margin-bottom:2rem;
+}
+
+/* TAGS */
+.high{color:#22c55e;font-weight:bold;}
+.medium{color:#facc15;}
+.low{color:#ef4444;}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:2rem;
+    background:#111;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <b>🧠 Smart Syllabus</b>
+    <span onclick="toggleMode()" id="icon" style="cursor:pointer;">🌕</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>NEET Smart Syllabus 2026</h1>
+    <p>Based on latest NTA syllabus | Focus on high-yield topics</p>
+</section>
+
+<div class="container">
+
+<!-- BIOLOGY -->
+<div class="card">
+<h2>🌿 Biology (360 Marks)</h2>
+
+<ul>
+<li class="high">Human Physiology ⭐⭐⭐⭐</li>
+<li class="high">Genetics & Evolution ⭐⭐⭐⭐</li>
+<li class="high">Ecology ⭐⭐⭐⭐</li>
+<li class="medium">Plant Physiology ⭐⭐⭐</li>
+<li class="medium">Cell Biology ⭐⭐⭐</li>
+<li class="medium">Reproduction ⭐⭐⭐</li>
+<li class="low">Biotechnology ⭐⭐</li>
+<li class="low">Diversity in Living World ⭐⭐</li>
+</ul>
+</div>
+
+<!-- CHEMISTRY -->
+<div class="card">
+<h2>⚗️ Chemistry (180 Marks)</h2>
+
+<h3>Physical Chemistry</h3>
+<ul>
+<li class="high">Mole Concept ⭐⭐⭐⭐</li>
+<li class="high">Thermodynamics ⭐⭐⭐⭐</li>
+<li class="medium">Electrochemistry ⭐⭐⭐</li>
+<li class="medium">Chemical Equilibrium ⭐⭐⭐</li>
+</ul>
+
+<h3>Organic Chemistry</h3>
+<ul>
+<li class="high">GOC + Mechanism ⭐⭐⭐⭐</li>
+<li class="high">Carbonyl Compounds ⭐⭐⭐⭐</li>
+<li class="medium">Hydrocarbons ⭐⭐⭐</li>
+<li class="medium">Amines ⭐⭐⭐</li>
+</ul>
+
+<h3>Inorganic Chemistry</h3>
+<ul>
+<li class="high">Chemical Bonding ⭐⭐⭐⭐</li>
+<li class="high">Coordination Compounds ⭐⭐⭐⭐</li>
+<li class="medium">Periodic Table ⭐⭐⭐</li>
+<li class="low">s-block & Hydrogen ⭐⭐</li>
+</ul>
+
+</div>
+
+<!-- PHYSICS -->
+<div class="card">
+<h2>⚡ Physics (180 Marks)</h2>
+
+<ul>
+<li class="high">Laws of Motion ⭐⭐⭐⭐</li>
+<li class="high">Thermodynamics ⭐⭐⭐⭐</li>
+<li class="high">Current Electricity ⭐⭐⭐⭐</li>
+<li class="high">Magnetism ⭐⭐⭐⭐</li>
+
+<li class="medium">Work, Energy & Power ⭐⭐⭐</li>
+<li class="medium">Optics ⭐⭐⭐</li>
+<li class="medium">Modern Physics ⭐⭐⭐</li>
+
+<li class="low">Units & Measurement ⭐⭐</li>
+<li class="low">Waves ⭐⭐</li>
+</ul>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+<p>Made with ❤️ by Curious Minds</p>
+</footer>
+
+<script>
+function toggleMode(){
+    document.body.classList.toggle("light");
+
+    let icon = document.getElementById("icon");
+
+    if(document.body.classList.contains("light")){
+        icon.textContent="🌞";
+        localStorage.setItem("mode","light");
+    } else {
+        icon.textContent="🌕";
+        localStorage.setItem("mode","dark");
+    }
+}
+
+if(localStorage.getItem("mode")==="light"){
+    document.body.classList.add("light");
+    document.getElementById("icon").textContent="🌞";
+}
+</script>
+
+</body>
+  </html>
