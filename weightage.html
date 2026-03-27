@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NEET Chapterwise Weightage</title>
+
+<meta name="description" content="Subject-wise NEET chapter weightage for Biology, Chemistry, and Physics.">
+
+<style>
+:root {
+    --bg: #0f172a;
+    --text: white;
+    --glass: rgba(255,255,255,0.06);
+}
+
+.light {
+    --bg: #f1f5ff;
+    --text: #111;
+    --glass: rgba(0,0,0,0.05);
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.hero h1 {
+    font-size: 2.6rem;
+}
+
+.hero p {
+    color: gray;
+}
+
+/* GRID */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 2rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* CARD */
+.card {
+    position: relative;
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-12px) scale(1.04);
+}
+
+/* IMAGE */
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* CONTENT */
+.card-content {
+    padding: 1.2rem;
+}
+
+.card h2 {
+    margin: 0;
+}
+
+.card p {
+    font-size: 14px;
+    color: gray;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 16px;
+    background: #6366f1;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+/* ANIMATION */
+.fade {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #111;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <b>📊 Weightage Hub</b>
+    <span onclick="toggleMode()" style="cursor:pointer;" id="icon">🌕</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero fade">
+    <h1>Chapterwise Weightage</h1>
+    <p>Select a subject to see high-yield chapters for NEET</p>
+</section>
+
+<!-- SUBJECT CARDS -->
+<div class="container">
+    <div class="grid">
+
+        <!-- BIOLOGY -->
+        <div class="card fade">
+            <img src="biology.jpeg">
+            <div class="card-content">
+                <h2>🧬 Biology</h2>
+                <p>Most scoring subject. Focus on NCERT lines.</p>
+                <a href="biology-weightage.html" class="btn">Explore</a>
+            </div>
+        </div>
+
+        <!-- CHEMISTRY -->
+        <div class="card fade">
+            <img src="chemistry.jpeg">
+            <div class="card-content">
+                <h2>⚗️ Chemistry</h2>
+                <p>Organic + NCERT = high marks.</p>
+                <a href="chemistry-weightage.html" class="btn">Explore</a>
+            </div>
+        </div>
+
+        <!-- PHYSICS -->
+        <div class="card fade">
+            <img src="physics.jpeg">
+            <div class="card-content">
+                <h2>⚡ Physics</h2>
+                <p>Concept + formula + practice.</p>
+                <a href="physics-weightage.html" class="btn">Explore</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Curious Minds Studio</p>
+</footer>
+
+<script>
+/* DARK MODE */
+function toggleMode(){
+    document.body.classList.toggle("light");
+
+    let icon = document.getElementById("icon");
+
+    if(document.body.classList.contains("light")){
+        icon.textContent = "🌞";
+        localStorage.setItem("mode","light");
+    } else {
+        icon.textContent = "🌕";
+        localStorage.setItem("mode","dark");
+    }
+}
+
+if(localStorage.getItem("mode") === "light"){
+    document.body.classList.add("light");
+    document.getElementById("icon").textContent = "🌞";
+}
+
+/* SCROLL ANIMATION */
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+document.querySelectorAll(".fade").forEach(el => observer.observe(el));
+</script>
+
+</body>
+  </html>
