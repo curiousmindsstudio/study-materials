@@ -43,7 +43,7 @@ nav {
 
 /* CONTAINER */
 .container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
     padding: 2rem;
 }
@@ -67,6 +67,7 @@ table {
 th, td {
     padding: 10px;
     text-align: center;
+    vertical-align: top;
 }
 
 th {
@@ -76,6 +77,13 @@ th {
 
 tr:nth-child(even) {
     background: rgba(255,255,255,0.05);
+}
+
+/* TEXT ALIGN FOR CHAPTERS COLUMN */
+td:last-child {
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
 /* HIGHLIGHT */
@@ -121,17 +129,100 @@ footer {
                 <th>Chapter</th>
                 <th>Questions</th>
                 <th>Weightage</th>
+                <th>Chapters Included</th>
             </tr>
 
-            <tr><td class="high">Genetics & Evolution</td><td>15</td><td>25%</td></tr>
-            <tr><td class="high">Ecology & Environment</td><td>10</td><td>16%</td></tr>
-            <tr><td>Plant Physiology</td><td>8</td><td>14%</td></tr>
-            <tr><td>Plant Diversity</td><td>7</td><td>12%</td></tr>
-            <tr><td>Cell Structure & Function</td><td>6</td><td>10%</td></tr>
-            <tr><td>Plant Reproduction</td><td>5</td><td>9%</td></tr>
-            <tr><td>Morphology</td><td>4</td><td>7%</td></tr>
-            <tr><td>Plant Anatomy</td><td>2</td><td>4%</td></tr>
-            <tr><td>Biomolecules</td><td>2</td><td>3%</td></tr>
+            <tr>
+                <td class="high">Genetics & Evolution</td>
+                <td>15</td>
+                <td>25%</td>
+                <td>
+                    Principles of Inheritance<br>
+                    Molecular Basis of Inheritance<br>
+                    Evolution
+                </td>
+            </tr>
+
+            <tr>
+                <td class="high">Ecology & Environment</td>
+                <td>10</td>
+                <td>16%</td>
+                <td>
+                    Organisms & Populations<br>
+                    Ecosystem<br>
+                    Biodiversity<br>
+                    Environmental Issues
+                </td>
+            </tr>
+
+            <tr>
+                <td>Plant Physiology</td>
+                <td>8</td>
+                <td>14%</td>
+                <td>
+                    Transport in Plants<br>
+                    Mineral Nutrition<br>
+                    Photosynthesis<br>
+                    Respiration<br>
+                    Plant Growth
+                </td>
+            </tr>
+
+            <tr>
+                <td>Plant Diversity</td>
+                <td>7</td>
+                <td>12%</td>
+                <td>
+                    Biological Classification (Algae)<br>
+                    Plant Kingdom
+                </td>
+            </tr>
+
+            <tr>
+                <td>Cell Structure & Function</td>
+                <td>6</td>
+                <td>10%</td>
+                <td>
+                    Cell: Unit of Life<br>
+                    Cell Cycle
+                </td>
+            </tr>
+
+            <tr>
+                <td>Plant Reproduction</td>
+                <td>5</td>
+                <td>9%</td>
+                <td>
+                    Sexual Reproduction in Flowering Plants
+                </td>
+            </tr>
+
+            <tr>
+                <td>Morphology</td>
+                <td>4</td>
+                <td>7%</td>
+                <td>
+                    Morphology of Flowering Plants
+                </td>
+            </tr>
+
+            <tr>
+                <td>Plant Anatomy</td>
+                <td>2</td>
+                <td>4%</td>
+                <td>
+                    Anatomy of Flowering Plants
+                </td>
+            </tr>
+
+            <tr>
+                <td>Biomolecules</td>
+                <td>2</td>
+                <td>3%</td>
+                <td>
+                    Biomolecules
+                </td>
+            </tr>
 
         </table>
     </div>
@@ -145,16 +236,88 @@ footer {
                 <th>Chapter</th>
                 <th>Questions</th>
                 <th>Weightage</th>
+                <th>Chapters Included</th>
             </tr>
 
-            <tr><td class="high">Human Physiology</td><td>13</td><td>45%</td></tr>
-            <tr><td class="high">Reproduction</td><td>5</td><td>16%</td></tr>
-            <tr><td>Animal Kingdom</td><td>3</td><td>10%</td></tr>
-            <tr><td>Origin & Evolution</td><td>3</td><td>10%</td></tr>
-            <tr><td>Human Health & Diseases</td><td>3</td><td>9%</td></tr>
-            <tr><td>Structural Organization</td><td>2</td><td>5%</td></tr>
-            <tr><td>Animal Husbandry</td><td>1</td><td>3%</td></tr>
-            <tr><td>Biology in Human Welfare</td><td>1</td><td>2%</td></tr>
+            <tr>
+                <td class="high">Human Physiology</td>
+                <td>13</td>
+                <td>45%</td>
+                <td>
+                    Digestion and Absorption<br>
+                    Breathing & Exchange of Gases<br>
+                    Body Fluids & Circulation<br>
+                    Excretion<br>
+                    Locomotion & Movement<br>
+                    Neural Control<br>
+                    Chemical Coordination
+                </td>
+            </tr>
+
+            <tr>
+                <td class="high">Reproduction</td>
+                <td>5</td>
+                <td>16%</td>
+                <td>
+                    Reproduction in Organisms<br>
+                    Human Reproduction<br>
+                    Reproductive Health
+                </td>
+            </tr>
+
+            <tr>
+                <td>Animal Kingdom</td>
+                <td>3</td>
+                <td>10%</td>
+                <td>
+                    Animal Kingdom
+                </td>
+            </tr>
+
+            <tr>
+                <td>Origin & Evolution</td>
+                <td>3</td>
+                <td>10%</td>
+                <td>
+                    Evolution
+                </td>
+            </tr>
+
+            <tr>
+                <td>Human Health & Diseases</td>
+                <td>3</td>
+                <td>9%</td>
+                <td>
+                    Human Health and Disease
+                </td>
+            </tr>
+
+            <tr>
+                <td>Structural Organization</td>
+                <td>2</td>
+                <td>5%</td>
+                <td>
+                    Structural Organisation in Animals
+                </td>
+            </tr>
+
+            <tr>
+                <td>Animal Husbandry</td>
+                <td>1</td>
+                <td>3%</td>
+                <td>
+                    Strategies for Enhancement in Food Production
+                </td>
+            </tr>
+
+            <tr>
+                <td>Biology in Human Welfare</td>
+                <td>1</td>
+                <td>2%</td>
+                <td>
+                    Microbes in Human Welfare
+                </td>
+            </tr>
 
         </table>
     </div>
@@ -188,4 +351,4 @@ if(localStorage.getItem("mode") === "light"){
 </script>
 
 </body>
-  </html>
+    </html>
