@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Morphology of Flowering Plants | Full NEET Master</title>
+
+<style>
+:root {
+    --bg:#0f172a;
+    --text:white;
+    --card:rgba(255,255,255,0.05);
+    --accent:#22c55e;
+}
+
+.light {
+    --bg:#f1f5ff;
+    --text:#111;
+    --card:rgba(0,0,0,0.05);
+}
+
+body {
+    margin:0;
+    font-family:Segoe UI;
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* NAV */
+nav {
+    display:flex;
+    justify-content:space-between;
+    padding:1rem 2rem;
+}
+
+/* HERO */
+.hero {
+    text-align:center;
+    padding:2.5rem 1rem;
+}
+
+.container {
+    max-width:1000px;
+    margin:auto;
+    padding:2rem;
+}
+
+/* CARD */
+.card {
+    background:var(--card);
+    padding:1.5rem;
+    border-radius:12px;
+    margin-bottom:1.5rem;
+}
+
+/* BUTTON */
+.btn {
+    padding:6px 12px;
+    background:#6366f1;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    margin-top:8px;
+}
+
+/* ANSWERS */
+.answer {
+    display:none;
+    margin-top:10px;
+    color:#22c55e;
+}
+
+/* QUIZ */
+.option {
+    background:#1e293b;
+    padding:8px;
+    margin:5px 0;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+/* TABLE */
+table {
+    width:100%;
+    border-collapse:collapse;
+}
+td, th {
+    border:1px solid #555;
+    padding:8px;
+}
+
+/* FOOTER */
+footer {
+    text-align:center;
+    padding:2rem;
+    background:#020617;
+    color:#cbd5e1;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<b>🌿 Morphology Master</b>
+<span onclick="toggleMode()" style="cursor:pointer;">🌙</span>
+</nav>
+
+<div class="hero">
+<h1>Morphology of Flowering Plants</h1>
+<p>Complete Theory + Practice + Smart Revision</p>
+<a href="biology-notes.html" class="btn">⬅ Back</a>
+</div>
+
+<div class="container">
+
+<!-- INTRO -->
+<div class="card">
+<h2>🌱 Introduction</h2>
+<p>
+Morphology is the study of external structure of plants. Early biology was observation-based (Natural History). Later, focus shifted to physiology.
+</p>
+<p>
+Morphology helps in identification and classification of plants. Proper terminology is essential.
+</p>
+</div>
+
+<!-- ROOT -->
+<div class="card">
+<h2>🌿 Root</h2>
+
+<table>
+<tr><th>Type</th><th>Description</th></tr>
+<tr><td>Tap root</td><td>From radicle, seen in dicots</td></tr>
+<tr><td>Fibrous</td><td>From base of stem, monocots</td></tr>
+<tr><td>Adventitious</td><td>From other plant parts</td></tr>
+</table>
+
+<p><b>Regions:</b> Root cap, Meristematic, Elongation, Maturation</p>
+<p><b>Functions:</b> Absorption, Anchorage, Storage, Hormone synthesis 🔥</p>
+</div>
+
+<!-- STEM -->
+<div class="card">
+<h2>🌱 Stem</h2>
+<p>
+Develops from plumule. Has nodes, internodes, and buds.
+</p>
+<p>
+Functions include conduction, support, storage, and vegetative propagation.
+</p>
+</div>
+
+<!-- LEAF -->
+<div class="card">
+<h2>🍃 Leaf</h2>
+<p>
+Leaf is lateral and flattened, arising from shoot apex.
+</p>
+
+<table>
+<tr><th>Feature</th><th>Type</th></tr>
+<tr><td>Venation</td><td>Reticulate (dicot), Parallel (monocot)</td></tr>
+<tr><td>Type</td><td>Simple / Compound</td></tr>
+</table>
+
+<p><b>Special:</b> Pulvinus (legumes) 🔥</p>
+</div>
+
+<!-- FLOWER -->
+<div class="card">
+<h2>🌸 Flower</h2>
+<p>
+Flower is a modified shoot and reproductive unit.
+</p>
+
+<p><b>Whorls:</b> Calyx, Corolla, Androecium, Gynoecium</p>
+<p><b>Symmetry:</b> Actinomorphic / Zygomorphic</p>
+<p><b>Ovary:</b> Superior / Inferior</p>
+
+<p><b>Aestivation:</b> Valvate, Twisted, Imbricate, Vexillary 🔥</p>
+</div>
+
+<!-- PLACENTATION -->
+<div class="card">
+<h2>🌼 Placentation</h2>
+<ul>
+<li>Marginal</li>
+<li>Axile 🔥</li>
+<li>Parietal</li>
+<li>Basal</li>
+<li>Free central</li>
+</ul>
+</div>
+
+<!-- FRUIT -->
+<div class="card">
+<h2>🍎 Fruit</h2>
+<p>Fruit is mature ovary.</p>
+<p><b>Parthenocarpy:</b> Fruit without fertilisation 🔥</p>
+</div>
+
+<!-- SEED -->
+<div class="card">
+<h2>🌱 Seed</h2>
+<p>
+Dicot: 2 cotyledons  
+Monocot: Scutellum, aleurone layer
+</p>
+</div>
+
+<!-- TIMER -->
+<div class="card">
+<h2>⏱️ Study Timer</h2>
+<button class="btn" onclick="startTimer()">Start 25 Min</button>
+<p id="timer"></p>
+</div>
+
+<!-- QUIZ -->
+<div class="card">
+<h2>🔥 Quiz</h2>
+
+<p>Most important placentation?</p>
+<div class="option" onclick="check(this,false)">Marginal</div>
+<div class="option" onclick="check(this,true)">Axile</div>
+
+</div>
+
+<!-- PYQ -->
+<div class="card">
+<h2>🎯 PYQs</h2>
+<p>Anther is?</p>
+<button class="btn" onclick="toggleAns(this)">Show</button>
+<div class="answer">Dithecous</div>
+</div>
+
+<!-- ASSERTION -->
+<div class="card">
+<h2>🧠 Assertion</h2>
+<p>A: Pulvinus in legumes<br>R: Helps movement</p>
+<button class="btn" onclick="toggleAns(this)">Show</button>
+<div class="answer">Correct & related</div>
+</div>
+
+</div>
+
+<footer>
+<p>Made with ❤️ by Curious Minds</p>
+</footer>
+
+<script>
+function toggleMode(){
+    document.body.classList.toggle("light");
+}
+
+function toggleAns(btn){
+    let a = btn.nextElementSibling;
+    a.style.display = a.style.display==="block"?"none":"block";
+}
+
+function check(el,correct){
+    el.style.background = correct ? "green":"red";
+}
+
+function startTimer(){
+    let time=1500;
+    let t=document.getElementById("timer");
+
+    let x=setInterval(()=>{
+        let m=Math.floor(time/60);
+        let s=time%60;
+        t.innerText=m+":"+s;
+        time--;
+        if(time<0){clearInterval(x); alert("Time up!");}
+    },1000);
+}
+</script>
+
+</body>
+  </html>
