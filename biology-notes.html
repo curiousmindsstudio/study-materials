@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Biology Notes | NEET</title>
+
+<style>
+:root {
+    --bg: #0f172a;
+    --text: white;
+    --card: rgba(255,255,255,0.06);
+}
+
+.light {
+    --bg: #f1f5ff;
+    --text: #111;
+    --card: rgba(0,0,0,0.05);
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 2rem;
+}
+
+/* SECTION TITLE */
+.section-title {
+    margin: 2rem 0 1rem;
+    font-size: 1.5rem;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+/* CARD BUTTON */
+.card {
+    background: var(--card);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    padding: 1.2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px) scale(1.04);
+}
+
+/* BUTTON LINK */
+.card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #020617;
+    color: #cbd5f5;
+}
+
+/* ANIMATION */
+.fade {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.7s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <b>🧬 Biology Notes</b>
+    <span onclick="toggleMode()" style="cursor:pointer;" id="icon">🌕</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero fade">
+    <h1>Biology Chapterwise Notes</h1>
+    <p>Click on any chapter to access smart notes for quick revision.</p>
+</section>
+
+<div class="container">
+
+    <!-- CLASS 11 -->
+    <h2 class="section-title">📘 Class 11 Biology</h2>
+
+    <div class="grid">
+
+        <div class="card fade"><a href="#">The Living World</a></div>
+        <div class="card fade"><a href="#">Biological Classification</a></div>
+        <div class="card fade"><a href="#">Plant Kingdom</a></div>
+        <div class="card fade"><a href="#">Animal Kingdom</a></div>
+        <div class="card fade"><a href="morphology-flowering-plants.html">Morphology of Flowering Plants</a></div>
+        <div class="card fade"><a href="#">Anatomy of Flowering Plants</a></div>
+        <div class="card fade"><a href="#">Structural Organisation in Animals</a></div>
+        <div class="card fade"><a href="#">Cell: The Unit of Life</a></div>
+        <div class="card fade"><a href="#">Biomolecules</a></div>
+        <div class="card fade"><a href="#">Cell Cycle and Cell Division</a></div>
+        <div class="card fade"><a href="#">Transport in Plants</a></div>
+        <div class="card fade"><a href="#">Mineral Nutrition</a></div>
+        <div class="card fade"><a href="#">Photosynthesis in Higher Plants</a></div>
+        <div class="card fade"><a href="#">Respiration in Plants</a></div>
+        <div class="card fade"><a href="#">Plant Growth and Development</a></div>
+        <div class="card fade"><a href="#">Breathing and Exchange of Gases</a></div>
+        <div class="card fade"><a href="#">Body Fluids and Circulation</a></div>
+        <div class="card fade"><a href="#">Excretory Products and their Elimination</a></div>
+        <div class="card fade"><a href="#">Locomotion and Movement</a></div>
+        <div class="card fade"><a href="#">Neural Control and Coordination</a></div>
+        <div class="card fade"><a href="#">Chemical Coordination and Integration</a></div>
+
+    </div>
+
+    <!-- CLASS 12 -->
+    <h2 class="section-title">📗 Class 12 Biology</h2>
+
+    <div class="grid">
+
+        <div class="card fade"><a href="#">Reproduction in Organisms</a></div>
+        <div class="card fade"><a href="#">Sexual Reproduction in Flowering Plants</a></div>
+        <div class="card fade"><a href="#">Human Reproduction</a></div>
+        <div class="card fade"><a href="#">Reproductive Health</a></div>
+        <div class="card fade"><a href="#">Principles of Inheritance and Variation</a></div>
+        <div class="card fade"><a href="#">Molecular Basis of Inheritance</a></div>
+        <div class="card fade"><a href="#">Evolution</a></div>
+        <div class="card fade"><a href="#">Human Health and Disease</a></div>
+        <div class="card fade"><a href="#">Strategies for Enhancement in Food Production</a></div>
+        <div class="card fade"><a href="#">Microbes in Human Welfare</a></div>
+        <div class="card fade"><a href="#">Biotechnology: Principles and Processes</a></div>
+        <div class="card fade"><a href="#">Biotechnology and its Applications</a></div>
+        <div class="card fade"><a href="#">Organisms and Populations</a></div>
+        <div class="card fade"><a href="#">Ecosystem</a></div>
+        <div class="card fade"><a href="#">Biodiversity and Conservation</a></div>
+        <div class="card fade"><a href="#">Environmental Issues</a></div>
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Curious Minds Studio | Made for NEET Aspirants</p>
+</footer>
+
+<script>
+function toggleMode(){
+    document.body.classList.toggle("light");
+
+    let icon = document.getElementById("icon");
+
+    if(document.body.classList.contains("light")){
+        icon.textContent = "🌞";
+        localStorage.setItem("mode","light");
+    } else {
+        icon.textContent = "🌕";
+        localStorage.setItem("mode","dark");
+    }
+}
+
+if(localStorage.getItem("mode") === "light"){
+    document.body.classList.add("light");
+    document.getElementById("icon").textContent = "🌞";
+}
+
+/* ANIMATION */
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+document.querySelectorAll(".fade").forEach(el => observer.observe(el));
+</script>
+
+</body>
+  </html>
