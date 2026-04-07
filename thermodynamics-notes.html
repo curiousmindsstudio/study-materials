@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Thermodynamics Notes | NEET</title>
+
+<style>
+:root {
+    --bg: #0f172a;
+    --text: white;
+    --card: rgba(255,255,255,0.06);
+    --accent: #22c55e;
+}
+
+.light {
+    --bg: #f1f5ff;
+    --text: #111;
+    --card: rgba(0,0,0,0.05);
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* NAV */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem;
+}
+
+/* CARD */
+.card {
+    background: var(--card);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+/* HEADINGS */
+h1 { text-align:center; }
+h2 { color: var(--accent); }
+
+/* COLLAPSIBLE */
+details {
+    margin-top: 10px;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #38bdf8;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+td, th {
+    border: 1px solid #444;
+    padding: 8px;
+    text-align: center;
+}
+
+/* HIGHLIGHT */
+.highlight {
+    color: #facc15;
+    font-weight: bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<b>🔥 Thermodynamics</b>
+<span onclick="toggleMode()" id="icon" style="cursor:pointer;">🌕</span>
+</nav>
+
+<div class="container">
+
+<h1>Complete Thermodynamics Notes (NEET)</h1>
+
+<!-- BASIC -->
+<div class="card">
+<h2>1. Basic Concepts</h2>
+
+<details open>
+<summary>Concepts</summary>
+<ul>
+<li>Thermodynamics deals with macroscopic systems.</li>
+<li>Focus on heat, work and energy.</li>
+</ul>
+
+<h3>Heat (Q)</h3>
+<ul>
+<li>Energy in transit</li>
+<li>Flows due to temperature difference</li>
+<li class="highlight">Not stored energy</li>
+</ul>
+
+<h3>Work (W)</h3>
+<p>Energy transfer due to force/displacement.</p>
+
+<h3>Internal Energy (U)</h3>
+<p>Total microscopic energy (KE + PE of molecules)</p>
+
+<table>
+<tr><th>Quantity</th><th>Type</th></tr>
+<tr><td>Heat</td><td>Path function</td></tr>
+<tr><td>Work</td><td>Path function</td></tr>
+<tr><td>Internal Energy</td><td>State function</td></tr>
+</table>
+</details>
+</div>
+
+<!-- ZEROTH -->
+<div class="card">
+<h2>2. Zeroth Law</h2>
+
+<details>
+<summary>Explanation</summary>
+<p>If A is in equilibrium with B and B with C → A with C.</p>
+<p class="highlight">Defines temperature</p>
+<p>Trap: Students confuse with energy ❌</p>
+</details>
+
+</div>
+
+<!-- FIRST LAW -->
+<div class="card">
+<h2>3. First Law</h2>
+
+<details>
+<summary>Formula + Meaning</summary>
+<p class="highlight">Q = ΔU + W</p>
+
+<table>
+<tr><th>Case</th><th>Sign</th></tr>
+<tr><td>Heat supplied</td><td>+Q</td></tr>
+<tr><td>Work by system</td><td>+W</td></tr>
+<tr><td>Work on system</td><td>-W</td></tr>
+</table>
+
+<p>Energy is conserved.</p>
+</details>
+
+</div>
+
+<!-- PROCESSES -->
+<div class="card">
+<h2>4. Thermodynamic Processes</h2>
+
+<details>
+<summary>All Processes</summary>
+
+<h3>Isothermal</h3>
+<ul>
+<li>T constant</li>
+<li>ΔU = 0</li>
+<li>Q = W</li>
+</ul>
+
+<h3>Adiabatic</h3>
+<ul>
+<li>Q = 0</li>
+<li>ΔU = -W</li>
+<li>Expansion → cooling</li>
+<li>Compression → heating</li>
+</ul>
+
+<h3>Isochoric</h3>
+<ul>
+<li>Volume constant</li>
+<li>W = 0</li>
+<li>Q = ΔU</li>
+</ul>
+
+<h3>Isobaric</h3>
+<ul>
+<li>Pressure constant</li>
+<li>W = PΔV</li>
+</ul>
+
+</details>
+
+</div>
+
+<!-- HEAT CAPACITY -->
+<div class="card">
+<h2>5. Heat Capacity</h2>
+
+<details>
+<summary>Details</summary>
+<p>C = Q / ΔT</p>
+<ul>
+<li>Cp → constant pressure</li>
+<li>Cv → constant volume</li>
+</ul>
+<p class="highlight">Cp > Cv</p>
+</details>
+
+</div>
+
+<!-- SECOND LAW -->
+<div class="card">
+<h2>6. Second Law</h2>
+
+<details>
+<summary>Statements</summary>
+
+<h3>Kelvin-Planck</h3>
+<p>100% heat → work impossible</p>
+
+<h3>Clausius</h3>
+<p>Heat flows hot → cold</p>
+<p>Reverse needs work</p>
+
+</details>
+
+</div>
+
+<!-- REVERSIBLE -->
+<div class="card">
+<h2>7. Reversible vs Irreversible</h2>
+
+<details>
+<summary>Comparison</summary>
+
+<table>
+<tr><th>Type</th><th>Features</th></tr>
+<tr><td>Reversible</td><td>Infinitely slow, no loss</td></tr>
+<tr><td>Irreversible</td><td>Real, energy loss</td></tr>
+</table>
+
+</details>
+
+</div>
+
+<!-- CARNOT -->
+<div class="card">
+<h2>8. Carnot Engine</h2>
+
+<details>
+<summary>Concept + Formula</summary>
+
+<p>Ideal engine with max efficiency</p>
+<p class="highlight">η = 1 - (T₂ / T₁)</p>
+
+<ul>
+<li>Temperature must be in Kelvin</li>
+<li>Independent of gas</li>
+<li>Efficiency less than 100%</li>
+</ul>
+
+</details>
+
+</div>
+
+<!-- TRAPS -->
+<div class="card">
+<h2>9. NEET Traps</h2>
+
+<details>
+<summary>Must Revise</summary>
+<ul>
+<li>Heat ≠ internal energy</li>
+<li>ΔU = 0 → isothermal</li>
+<li>Q = 0 → adiabatic</li>
+<li>W = 0 → isochoric</li>
+<li>Cp > Cv</li>
+<li>100% efficiency impossible</li>
+<li>Heat flows hot → cold</li>
+<li>Reversible = infinitely slow</li>
+<li>Adiabatic expansion cools gas</li>
+</ul>
+</details>
+
+</div>
+
+<!-- STRATEGY -->
+<div class="card">
+<h2>10. Exam Strategy</h2>
+
+<details>
+<summary>How to Solve Questions</summary>
+<ul>
+<li>Identify process first</li>
+<li>Apply correct relation</li>
+<li>Check sign convention</li>
+<li>Use Kelvin in Carnot</li>
+</ul>
+</details>
+
+</div>
+
+</div>
+
+<script>
+function toggleMode(){
+    document.body.classList.toggle("light");
+    let icon = document.getElementById("icon");
+
+    if(document.body.classList.contains("light")){
+        icon.textContent = "🌞";
+        localStorage.setItem("mode","light");
+    } else {
+        icon.textContent = "🌕";
+        localStorage.setItem("mode","dark");
+    }
+}
+
+if(localStorage.getItem("mode") === "light"){
+    document.body.classList.add("light");
+    document.getElementById("icon").textContent = "🌞";
+}
+</script>
+
+</body>
+  </html>
