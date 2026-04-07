@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Physics Notes | NEET</title>
+
+<style>
+:root {
+    --bg: #0f172a;
+    --text: white;
+    --card: rgba(255,255,255,0.06);
+}
+
+.light {
+    --bg: #f1f5ff;
+    --text: #111;
+    --card: rgba(0,0,0,0.05);
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 2rem;
+}
+
+/* SECTION TITLE */
+.section-title {
+    margin: 2rem 0 1rem;
+    font-size: 1.5rem;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+/* CARD */
+.card {
+    background: var(--card);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    padding: 1.2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px) scale(1.04);
+}
+
+/* LINK */
+.card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #020617;
+    color: #cbd5f5;
+}
+
+/* ANIMATION */
+.fade {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.7s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <b>⚡ Physics Notes</b>
+    <span onclick="toggleMode()" style="cursor:pointer;" id="icon">🌕</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero fade">
+    <h1>Physics Chapterwise Notes</h1>
+    <p>Click on any chapter to access smart NEET notes.</p>
+</section>
+
+<div class="container">
+
+    <!-- CLASS 11 -->
+    <h2 class="section-title">📘 Class 11 Physics</h2>
+
+    <div class="grid">
+
+        <div class="card fade"><a href="#">Units and Measurements</a></div>
+        <div class="card fade"><a href="#">Motion in a Straight Line</a></div>
+        <div class="card fade"><a href="#">Motion in a Plane</a></div>
+        <div class="card fade"><a href="#">Laws of Motion</a></div>
+        <div class="card fade"><a href="#">Work, Energy and Power</a></div>
+        <div class="card fade"><a href="#">System of Particles & Rotational Motion</a></div>
+        <div class="card fade"><a href="#">Gravitation</a></div>
+        <div class="card fade"><a href="thermodynamics-notes.html">Thermodynamics</a></div>
+        <div class="card fade"><a href="#">Kinetic Theory</a></div>
+        <div class="card fade"><a href="#">Oscillations</a></div>
+        <div class="card fade"><a href="#">Waves</a></div>
+
+    </div>
+
+    <!-- CLASS 12 -->
+    <h2 class="section-title">📗 Class 12 Physics</h2>
+
+    <div class="grid">
+
+        <div class="card fade"><a href="#">Electric Charges and Fields</a></div>
+        <div class="card fade"><a href="#">Electrostatic Potential and Capacitance</a></div>
+        <div class="card fade"><a href="#">Current Electricity</a></div>
+        <div class="card fade"><a href="#">Moving Charges and Magnetism</a></div>
+        <div class="card fade"><a href="#">Magnetism and Matter</a></div>
+        <div class="card fade"><a href="#">Electromagnetic Induction</a></div>
+        <div class="card fade"><a href="#">Alternating Current</a></div>
+        <div class="card fade"><a href="#">Electromagnetic Waves</a></div>
+        <div class="card fade"><a href="#">Ray Optics and Optical Instruments</a></div>
+        <div class="card fade"><a href="#">Wave Optics</a></div>
+        <div class="card fade"><a href="#">Dual Nature of Radiation and Matter</a></div>
+        <div class="card fade"><a href="#">Atoms</a></div>
+        <div class="card fade"><a href="#">Nuclei</a></div>
+        <div class="card fade"><a href="#">Semiconductor Electronics</a></div>
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Curious Minds Studio | Made for NEET Aspirants</p>
+</footer>
+
+<script>
+function toggleMode(){
+    document.body.classList.toggle("light");
+
+    let icon = document.getElementById("icon");
+
+    if(document.body.classList.contains("light")){
+        icon.textContent = "🌞";
+        localStorage.setItem("mode","light");
+    } else {
+        icon.textContent = "🌕";
+        localStorage.setItem("mode","dark");
+    }
+}
+
+if(localStorage.getItem("mode") === "light"){
+    document.body.classList.add("light");
+    document.getElementById("icon").textContent = "🌞";
+}
+
+/* ANIMATION */
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+document.querySelectorAll(".fade").forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
